@@ -25,7 +25,7 @@ public class Monomial {
     public Monomial derivative(){
         return (new Monomial(exponent-1, this.coefficient.mul(new Integer(exponent))));
     }
-    public int sing(){
+    public int sign(){
         return this.coefficient.sign();
     }
     public boolean equals(Object o){

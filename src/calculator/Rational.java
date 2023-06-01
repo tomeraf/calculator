@@ -10,7 +10,6 @@ public class Rational implements Scalar {
     public Rational GetValue(){return this;}
     public int GetNumerator(){return nomerator;}
     public int GetDenominator(){return denominator;}
-    //AddFunctions
     public Scalar add(Rational R1) {
         return new Rational(this.nomerator *R1.denominator+this.denominator* R1.nomerator,
                 this.denominator*R1.denominator);
@@ -18,11 +17,9 @@ public class Rational implements Scalar {
     public Scalar add(Integer I1){
         return new Rational(nomerator +denominator*I1.GetNumber(),denominator);
     }
-
     public Scalar add(Scalar s) {
         return s.add(this);
     }
-    //MultiplicationFunctions
     public Scalar mul(Rational R1){
         return new Rational(this.nomerator*R1.nomerator,
                 this.denominator*R1.denominator);
@@ -33,11 +30,9 @@ public class Rational implements Scalar {
     public Scalar mul(Scalar s){
         return s.mul(this);
     }
-    //---------
     public Scalar neg() {
         return new Rational(this.nomerator * (-1),this.denominator);
     }
-
     public Scalar power(int exponent){
         int nom2 = this.nomerator;
         int denom2 = this.denominator;
@@ -52,8 +47,6 @@ public class Rational implements Scalar {
         }
         return new Rational(nom2,denom2);
     }
-
-
     public int sign(){
         if (this.nomerator==0) return 0;
         if ((this.nomerator>0&this.denominator>0)||(this.nomerator<0&this.denominator<0)) return 1;
